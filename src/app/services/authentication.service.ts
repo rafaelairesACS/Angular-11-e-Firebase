@@ -13,20 +13,18 @@ export class AuthenticationService {
 
   constructor(private afAuth:AngularFireAuth) {
     this.user = afAuth.authState;
-   }
+  }
 
-   login(email:string , senha:string): Promise<firebase.auth.UserCredential>{
+  login(email:string , senha:string): Promise<firebase.auth.UserCredential>{
     return this.afAuth.signInWithEmailAndPassword(email,senha);
-   }
+  }
 
-   logout(): Promise<void>{
+  logout(): Promise<void>{
     return this.afAuth.signOut();
-   }
+  }
 
    resetPassword(email : string){
     return this.afAuth.sendPasswordResetEmail(email)
    }
-
-
 
 }
