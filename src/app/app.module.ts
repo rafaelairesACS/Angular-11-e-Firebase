@@ -9,12 +9,15 @@ import { environment } from 'src/environments/environment';
 import	{	AngularFirestoreModule	}	from '@angular/fire/firestore';
 import	{	AngularFireAuthModule	}	from '@angular/fire/auth';
 import { LoginComponent } from './components/public/login/login.component';
+import { FormsModule } from '@angular/forms';
+import { MenuComponent } from './components/admin/menu/menu.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent
+    LoginComponent,
+    MenuComponent
   ],
   imports: [
     BrowserModule,
@@ -22,7 +25,8 @@ import { LoginComponent } from './components/public/login/login.component';
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFirestoreModule,
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
