@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { AuthenticationService } from 'src/app/services/authentication.service';
+import { Router } from '@angular/router';
 import firebase from 'firebase/app';
 
 @Component({
@@ -14,12 +14,12 @@ export class MenuComponent implements OnInit {
   user: Observable<firebase.User>;
   constructor(private authServ: AuthenticationService, private router: Router) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
     this.user = this.authServ.authUser();
   }
 
-  sair(){
-    this.authServ.logout().then(()	=> this.router.navigate(['/']));
+  sair() {
+    this.authServ.logout().then(() => this.router.navigate(['/']));
   }
 
 
